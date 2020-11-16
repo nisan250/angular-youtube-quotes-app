@@ -1,9 +1,9 @@
 <div class="search-list">
   <div
-    *ngFor="let song of songsList"
-    class="song"
     (click)="onSongSelected(song)"
+    *ngFor="let song of songsList"
     [ngClass]="{ active: song?.id === selectedSong?.id }"
+    class="song"
   >
     <span>song {{ song.id }}: </span>
     <span>{{ song.title }}</span>

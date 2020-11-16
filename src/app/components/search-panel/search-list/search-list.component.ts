@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { SongServiceService } from '../../../service/song-service.service';
-import { Song } from './../../../model/song';
+import {Component, Input, OnInit} from '@angular/core';
+import {SongServiceService} from '../../../service/song-service.service';
+import {Song} from '../../../model/song';
 
 @Component({
   selector: 'app-search-list',
@@ -10,12 +10,14 @@ import { Song } from './../../../model/song';
 export class SearchListComponent implements OnInit {
   @Input() songsList: Song[];
   selectedSong: Song;
-  
-  constructor(private songServiceService: SongServiceService) {}
 
-  ngOnInit(): void {}
+  constructor(private songServiceService: SongServiceService) {
+  }
 
-  onSongSelected(selectedSong: Song) {
+  ngOnInit(): void {
+  }
+
+  onSongSelected(selectedSong: Song): void {
     this.selectedSong = selectedSong;
     this.songServiceService.changeSelectedSong(selectedSong);
   }

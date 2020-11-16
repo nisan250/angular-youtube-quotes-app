@@ -1,4 +1,4 @@
-import { Song } from '../model/song';
+import {Song} from '../model/song';
 
 export const songs: Song[] = [
   {
@@ -7,13 +7,11 @@ export const songs: Song[] = [
     youtubeId: '6hzrDeceEKc',
     quotes: [
       {
-        text:
-          "Today is gonna be the day that they're gonna throw it back to you",
+        text: 'Today is gonna be the day that they\'re gonna throw it back to you',
         offset: 38,
       },
       {
-        text:
-          'Back beat, the word is on the street that the fire in your heart is out',
+        text: 'Back beat, the word is on the street that the fire in your heart is out',
         offset: 60,
       },
     ],
@@ -24,11 +22,11 @@ export const songs: Song[] = [
     youtubeId: 'VPRjCeoBqrI',
     quotes: [
       {
-        text: "Cause you're a sky, 'cause you're a sky full of stars",
+        text: 'Cause you\'re a sky, \'cause you\'re a sky full of stars',
         offset: 19,
       },
       {
-        text: "I don't care, go on and tear me apart",
+        text: 'I don\'t care, go on and tear me apart',
         offset: 50,
       },
     ],
@@ -54,11 +52,11 @@ export const songs: Song[] = [
     youtubeId: 'RBumgq5yVrA',
     quotes: [
       {
-        text: "Well you only need the light when it's burning low",
+        text: 'Well you only need the light when it\'s burning low',
         offset: 26,
       },
       {
-        text: "Only know you've been high when you're feeling low",
+        text: 'Only know you\'ve been high when you\'re feeling low',
         offset: 39,
       },
     ],
@@ -84,7 +82,7 @@ export const songs: Song[] = [
     youtubeId: 'oRdxUFDoQe0',
     quotes: [
       {
-        text: "They told him don't you ever come around here",
+        text: 'They told him don\'t you ever come around here',
         offset: 60,
       },
       {
@@ -110,11 +108,11 @@ export const songs: Song[] = [
   },
   {
     id: 8,
-    title: "Maroon 5 - Don't Wanna Know",
+    title: 'Maroon 5 - Don\'t Wanna Know',
     youtubeId: 'ANS9sSJA9Yc',
     quotes: [
       {
-        text: "I don't wanna know, know, know, know",
+        text: 'I don\'t wanna know, know, know, know',
         offset: 41,
       },
       {
@@ -144,11 +142,11 @@ export const songs: Song[] = [
     youtubeId: 'hLQl3WQQoQ0',
     quotes: [
       {
-        text: "I heard, that you're settled down",
+        text: 'I heard, that you\'re settled down',
         offset: 14,
       },
       {
-        text: "Never mind I'll find someone like you",
+        text: 'Never mind I\'ll find someone like you',
         offset: 73,
       },
     ],

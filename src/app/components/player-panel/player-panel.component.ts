@@ -1,7 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { Quote, Song } from '../../model/song';
-import { SongServiceService } from '../../service/song-service.service';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Subscription} from 'rxjs';
+import {Quote, Song} from '../../model/song';
+import {SongServiceService} from '../../service/song-service.service';
 
 @Component({
   selector: 'app-player-panel',
@@ -9,13 +9,13 @@ import { SongServiceService } from '../../service/song-service.service';
   styleUrls: ['./player-panel.component.scss'],
 })
 export class PlayerPanelComponent implements OnInit, OnDestroy {
-
-  constructor(private songServiceService: SongServiceService) {}
-
   selectedQuote: Quote;
   selectedSong: Song;
   sub: Subscription;
-  
+
+  constructor(private songServiceService: SongServiceService) {
+  }
+
   ngOnInit(): void {
     this.sub = this.songServiceService.selectedSongChanges$.subscribe(
       (song) => this.selectedSong = song
@@ -26,7 +26,7 @@ export class PlayerPanelComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
-  handleSelectedQuote(quote: Quote) {
+  handleSelectedQuote(quote: Quote): void {
     this.selectedQuote = quote;
   }
 }

@@ -1,20 +1,12 @@
-import {
-  Component,
-  Input,
-  OnInit,
-  OnChanges,
-  ɵɵNgOnChangesFeature,
-  SimpleChanges,
-} from '@angular/core';
-import { Quote, Song } from '../../../model/song';
-// import * as NGYTPackage from '../../package.json';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {Quote, Song} from '../../../model/song';
 
 @Component({
   selector: 'app-video-player',
   templateUrl: './video-player.component.html',
   styleUrls: ['./video-player.component.scss'],
 })
-export class VideoPlayerComponent {
+export class VideoPlayerComponent implements OnChanges {
   @Input() song: Song;
   @Input() quote: Quote;
   startTime: number;
@@ -29,21 +21,20 @@ export class VideoPlayerComponent {
   private ytEvent;
 
   constructor() {
-    // this.version = NGYTPackage['dependencies']['ngx-youtube-player'].replace('^', '');
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['song']?.currentValue || changes['quote']?.currentValue) {
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.song?.currentValue || changes.quote?.currentValue) {
       this.startTime = changes.song ? (this.startTime = 0) : this.quote.offset;
       this.player.cueVideoById(this.song.youtubeId, this.startTime).playVideo();
     }
   }
 
-  savePlayer(player) {
+  savePlayer(player): void {
     this.player = player;
   }
 
-  onStateChange(event) {
+  onStateChange(event): void {
     this.ytEvent = event.data;
   }
 

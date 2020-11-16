@@ -1,6 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Song, Quote } from '../../../model/song';
-import { SongServiceService } from '../../../service/song-service.service';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Quote} from '../../../model/song';
 
 @Component({
   selector: 'app-quotes-list',
@@ -8,15 +7,18 @@ import { SongServiceService } from '../../../service/song-service.service';
   styleUrls: ['./quotes-list.component.scss'],
 })
 export class QuotesListComponent implements OnInit {
-  constructor() {}
-
   @Input() quotes: Quote[];
   @Output() selectedQuote: EventEmitter<Quote> = new EventEmitter<Quote>();
-  offsetSelected: number;
 
-  ngOnInit(): void {}
+  public offsetSelected: number;
 
-  selectQuote(quote: Quote) {
+  constructor() {
+  }
+
+  ngOnInit(): void {
+  }
+
+  public selectQuote($event: any, quote: Quote): void {
     this.offsetSelected = quote.offset;
     this.selectedQuote.emit(quote);
   }

@@ -5,17 +5,13 @@
   </div>
 
   <div class="quotes-list">
-    <div
-      class="quote"
-      *ngFor="let quote of quotes"
-      (click)="selectQuote(quote)"
-      [ngClass]="{ active: quote?.offset === offsetSelected }"
-    >
-      <span class="play-icon"><img src="assets/play.png" /></span>
+    <div (click)="selectQuote($event, quote)"
+         *ngFor="let quote of quotes"
+         [ngClass]="{ active: quote?.offset === offsetSelected }"
+         class="quote">
+      <span class="play-icon"><img alt="play" src="assets/play.png"/></span>
       <span class="quote-text">{{ quote.text }}</span>
-      <span class="quote-time">{{
-        quote.offset * 1000 | date: "mm:ss":"UTC"
-      }}</span>
+      <span class="quote-time">{{quote.offset * 1000 | date: "mm:ss":"UTC"}}</span>
     </div>
   </div>
 </div>
