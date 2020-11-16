@@ -12,10 +12,12 @@ export class QuotesListComponent implements OnInit {
 
   @Input() quotes: Quote[];
   @Output() selectedQuote: EventEmitter<Quote> = new EventEmitter<Quote>();
+  offsetSelected: number;
 
   ngOnInit(): void {}
 
   selectQuote(quote: Quote) {
+    this.offsetSelected = quote.offset;
     this.selectedQuote.emit(quote);
   }
 }

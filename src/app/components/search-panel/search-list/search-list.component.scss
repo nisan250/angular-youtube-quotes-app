@@ -30,5 +30,10 @@
       display: block;
       margin-left: 10px;
     }
+
+    &.active {
+      background: #ccc;
+      cursor: default;
+    }
   }
 }

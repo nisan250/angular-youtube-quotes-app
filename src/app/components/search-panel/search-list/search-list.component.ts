@@ -9,12 +9,14 @@ import { Song } from './../../../model/song';
 })
 export class SearchListComponent implements OnInit {
   @Input() songsList: Song[];
-
+  selectedSong: Song;
+  
   constructor(private songServiceService: SongServiceService) {}
 
   ngOnInit(): void {}
 
   onSongSelected(selectedSong: Song) {
+    this.selectedSong = selectedSong;
     this.songServiceService.changeSelectedSong(selectedSong);
   }
 }

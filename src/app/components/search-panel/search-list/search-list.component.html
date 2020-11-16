@@ -1,6 +1,13 @@
 <div class="search-list">
-  <div *ngFor="let song of songsList" class="song" (click)="onSongSelected(song)">
+  <div
+    *ngFor="let song of songsList"
+    class="song"
+    (click)="onSongSelected(song)"
+    [ngClass]="{ active: song?.id === selectedSong?.id }"
+  >
     <span>song {{ song.id }}: </span>
     <span>{{ song.title }}</span>
   </div>
+
+  <div *ngIf="!songsList.length">No Results</div>
 </div>
