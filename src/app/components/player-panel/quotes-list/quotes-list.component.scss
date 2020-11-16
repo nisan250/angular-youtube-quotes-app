@@ -1,0 +1,53 @@
+.quotes-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.quotes-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0;
+
+  h3 {
+    margin: 0;
+  }
+
+  span {
+  }
+}
+
+.quotes-list {
+  overflow-y: auto;
+
+  .quote {
+    border: 1px solid #000;
+    display: flex;
+    margin-bottom: 12px;
+    padding: 4px;
+
+    &:hover {
+      background: #ccc;
+      cursor: pointer;
+    }
+
+    .play-icon {
+    }
+
+    .quote-text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+      padding: 0 12px;
+      flex: 1;
+    }
+    .quote-time {
+    }
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .quotes-wrapper {
+    width: calc(100% - 50px);
+  }
+}

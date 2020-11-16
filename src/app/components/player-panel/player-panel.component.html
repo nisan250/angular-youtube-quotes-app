@@ -1,0 +1,6 @@
+<div class="video-player-wrapper">
+  <app-video-player [song]="selectedSong" [quote]="selectedQuote"></app-video-player>
+</div>
+<div class="quotes-list-wrapper">
+  <app-quotes-list [quotes]="selectedSong?.quotes" (selectedQuote)="handleSelectedQuote($event)"></app-quotes-list>
+</div>

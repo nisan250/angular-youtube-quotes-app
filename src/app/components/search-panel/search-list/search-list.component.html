@@ -1,0 +1,6 @@
+<div class="search-list">
+  <div *ngFor="let song of songsList" class="song" (click)="onSongSelected(song)">
+    <span>song {{ song.id }}: </span>
+    <span>{{ song.title }}</span>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div *ngIf="quotes" class="quotes-wrapper">
+  <div class="quotes-header">
+    <h3>Quotes</h3>
+    <span>{{quotes?.length}} quotes</span>
+  </div>
+
+  <div class="quotes-list">
+    <div class="quote" *ngFor="let quote of quotes" (click)="selectQuote(quote)">
+      <span class="play-icon">icon</span>
+      <span class="quote-text">{{quote.text}}</span>
+      <span class="quote-time">{{ quote.offset * 1000 | date:'mm:ss':'UTC' }}</span>
+    </div>
+  </div>
+</div>

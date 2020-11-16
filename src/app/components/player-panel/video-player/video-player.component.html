@@ -1,0 +1,14 @@
+<div class="video-player-wrapper">
+  <h2>{{ song?.title }}</h2>
+  <div class="video-player">
+    <youtube-player
+      [videoId]="song?.youtubeId"
+      (ready)="savePlayer($event)"
+      (change)="onStateChange($event)"
+      [playerVars]="playerVars"
+      [width]="'100%'"
+      [height]="'100%'"
+    >
+    </youtube-player>
+  </div>
+</div>
